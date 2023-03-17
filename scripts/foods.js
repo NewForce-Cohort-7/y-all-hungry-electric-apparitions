@@ -2,9 +2,6 @@ import { getFood} from "./database.js"
 
 const arrayOfFood = getFood()
 
-
-
-
 export const generateFoodHTML = () => {
     let html = `<select id="foods">
     <option value="0">Pick Your Dawg</option>`
