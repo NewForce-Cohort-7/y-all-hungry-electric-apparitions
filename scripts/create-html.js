@@ -29,6 +29,7 @@ export const createHTML = () => {
 
         <article id="currentOrder">
             <h2> Current Order </h2>
+            <section id='order-location'></section>
             <section id="food-order"></section>
             <section id="drink-order"></section>
             <section id="dessert-order"></section>
@@ -36,9 +37,6 @@ export const createHTML = () => {
      
         <article>
             <button id="orderButton">Place Order</button>
-        </article>
-
-        <article id='order-location'>
         </article>
 
         <article id="orders">
