@@ -1,16 +1,21 @@
-import { getLocations } from "./database.js"
+import { getLocations, setLocation, getOrderBuilder} from "./database.js"
 const arrayOfLocations = getLocations()
 
 export const createLocationList = () => {
     let html = `<select id="dropdown-locations">
                     <option value="0">Select a Location</option>`
-
-    // Use .map() for converting objects to <li> elements
+    
+    // Use .map() for converting objects to <option> elements
     const listItemsArray = arrayOfLocations.map(location => {
 
-        return `<option value="${location.id}">${location.name}</option>`
+        const currentOrder = getOrderBuilder()
 
-        })
+        if(location.id === currentOrder.locationId){
+            return `<option value="${location.id}" selected>${location.name}</option>`
+        }
+
+        else{return `<option value="${location.id}">${location.name}</option>`}
+    })
 
     // Join all of the strings in the array into a single string
     html += listItemsArray.join("")
@@ -26,6 +31,7 @@ document.addEventListener("change", (event) => {
             if(singleLocation.id === parseInt(event.target.value)){
                 matchedLocation = singleLocation.address
                 console.log(matchedLocation)
+                setLocation(singleLocation.id)
             }
         }
 
