@@ -1,4 +1,5 @@
 import { createLocationList } from "./locations.js"
+import { Drinks } from "./drinks.js"
 
 export const createHTML = () => {
 
@@ -16,13 +17,19 @@ export const createHTML = () => {
         </article>
         
         <article id='drinks'>
-            <h2>Drinks</h2>
-            *PUT DRINK DROPDOWN HERE*
+            ${Drinks()}
         </article>
         
         <article id='desserts'>
             <h2>Desserts</h2>
             *PUT DESSERT DROPDOWN HERE*
+        </article>
+
+        <article id="currentOrder">
+            <h2> Current Order </h2>
+            <section id="food-order"></section>
+            <section id="drink-order"></section>
+            <section id="dessert-order"></section>
         </article>
      
         <article>
@@ -34,7 +41,6 @@ export const createHTML = () => {
 
         <article id="orders">
             <h2>Orders</h2>
-            *PUT ORDERS LIST HERE*
         </article>
     `
 }
