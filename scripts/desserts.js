@@ -4,9 +4,8 @@ const desserts = getDesserts()
 
 export const Desserts = () => {
 
-    let html = "<h2>Desserts</h2>"
 
-    html += '<select id="desserts">'
+   let html = '<select id="desserts">'
     html += '<option value="0">Select a dessert</option>'
     
     const arrayOfOptions = desserts.map( (dessert) => {
