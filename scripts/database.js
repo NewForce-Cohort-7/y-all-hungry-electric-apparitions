@@ -141,11 +141,18 @@ const database = {
     orderBuilder: {}
 }
 
+export const getDrinks = () => {
+    return database.drinks.map(drink => ({...drink}))
+}
 
 
 export const getDesserts = () => {
     return database.desserts.map(dessert => ({...dessert}))
 }
+export const setDrinks = (id) => {
+    database.orderBuilder.drinkId = id
+}
+
 
 export const setLocation = (locationId) => {
     database.orderBuilder.selectedLocation = locationId
@@ -161,4 +168,8 @@ export const completeOrder = () => {
         // Broadcast custom event to entire documement so that the
         // application can re-render and update state
         document.dispatchEvent( new CustomEvent("stateChanged") )
+}
+
+export const getFood = () => {
+    return database.foods.map (dragons => ({...dragons}))
 }
