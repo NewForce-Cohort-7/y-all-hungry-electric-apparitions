@@ -1,4 +1,7 @@
 import { createLocationList } from "./locations.js"
+import { generateFoodHTML } from "./foods.js"
+
+
 
 export const createHTML = () => {
 
@@ -12,7 +15,7 @@ export const createHTML = () => {
         
         <article id='foods'>
             <h2>Foods</h2>
-            *PUT FOOD DROPDOWN HERE*
+            ${generateFoodHTML()}
         </article>
         
         <article id='drinks'>
