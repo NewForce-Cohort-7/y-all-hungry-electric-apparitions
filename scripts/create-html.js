@@ -1,3 +1,4 @@
+import { Desserts } from "./desserts.js"
 import { createLocationList } from "./locations.js"
 import { generateFoodHTML } from "./foods.js"
 import { Drinks } from "./drinks.js"
@@ -23,7 +24,7 @@ export const createHTML = () => {
         
         <article id='desserts'>
             <h2>Desserts</h2>
-            *PUT DESSERT DROPDOWN HERE*
+            ${Desserts()}
         </article>
 
         <article id="currentOrder">
