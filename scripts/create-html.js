@@ -1,3 +1,4 @@
+import { Desserts } from "./desserts.js"
 import { createLocationList } from "./locations.js"
 
 export const createHTML = () => {
@@ -22,7 +23,7 @@ export const createHTML = () => {
         
         <article id='desserts'>
             <h2>Desserts</h2>
-            *PUT DESSERT DROPDOWN HERE*
+            ${Desserts()}
         </article>
      
         <article>

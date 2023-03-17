@@ -143,7 +143,9 @@ const database = {
 
 
 
-
+export const getDesserts = () => {
+    return database.desserts.map(dessert => ({...dessert}))
+}
 
 export const setLocation = (locationId) => {
     database.orderBuilder.selectedLocation = locationId
