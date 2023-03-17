@@ -1,7 +1,5 @@
 import { createLocationList } from "./locations.js"
 import { generateFoodHTML } from "./foods.js"
-
-
 import { Drinks } from "./drinks.js"
 
 export const createHTML = () => {
