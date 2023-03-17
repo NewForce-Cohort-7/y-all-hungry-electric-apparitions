@@ -141,8 +141,13 @@ const database = {
     orderBuilder: {}
 }
 
+export const getDrinks = () => {
+    return database.drinks.map(drink => ({...drink}))
+}
 
-
+export const setDrinks = (id) => {
+    database.orderBuilder.drinkId = id
+}
 
 
 export const setLocation = (locationId) => {
