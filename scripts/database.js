@@ -76,7 +76,6 @@ const database = {
             name: 'None',
             price: 0,
             img: '',
-            desc: ''
         }
     ],
     
@@ -187,10 +186,13 @@ export const getDesserts = () => {
     return database.desserts.map(dessert => ({...dessert}))
 }
 
+export const getOrders = () => {
+    return database.orders.map(order => ({...order}))
+}
+
 export const getOrderBuilder = () => {
     return database.orderBuilder
 }
-
 
 export const getDrinkStock = () => {
     return database.drinkStock.map(obj => ({...obj}))
@@ -203,7 +205,6 @@ export const getDessertStock = () => {
 export const getFoodStock = () => {
     return database.foodStock.map(obj => ({...obj}))
 }
-
 
 export const setLocation = (id) => {
     database.orderBuilder.locationId = id
@@ -228,9 +229,19 @@ export const setFood = (id) => {
 
 export const completeOrder = () => {
 
-        // Broadcast custom event to entire documement so that the
-        // application can re-render and update state
+        // Copy the current state of user choices
+        const newOrder = {...database.orderBuilder}
+
+        // Add a new primary key to the object
+        newOrder.id = database.orders.length + 1
+    
+        // Add a timestamp to the order
+        newOrder.timestamp = Date.now()
+    
+        // Add the new order object to custom orders state
+        database.orders.push(newOrder)
+    
+        // Reset the temporary state for user choices
+        database.orderBuilder = {}
         document.dispatchEvent( new CustomEvent("stateChanged") )
 }
-
-
