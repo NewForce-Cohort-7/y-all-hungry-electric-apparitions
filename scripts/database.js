@@ -245,3 +245,13 @@ export const completeOrder = () => {
         database.orderBuilder = {}
         document.dispatchEvent( new CustomEvent("stateChanged") )
 }
+
+export function updateFoodStockQuantity(locationId, foodId) {
+
+    const foodStock = database.foodStock.find(stock => stock.locationId === locationId && stock.foodId === foodId);
+    
+    foodStock.quantity--;
+    
+    const index = database.foodStock.findIndex(stock => stock.id === foodStock.id);
+    database.foodStock[index] = foodStock;
+  }

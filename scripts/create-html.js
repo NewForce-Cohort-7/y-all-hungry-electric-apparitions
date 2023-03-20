@@ -3,7 +3,7 @@ import { createLocationList } from "./locations.js"
 import { generateFoodHTML } from "./foods.js"
 import { Drinks } from "./drinks.js"
 import { Orders } from "./orders.js"
-import { completeOrder } from "./database.js"
+import { completeOrder, updateFoodStockQuantity } from "./database.js"
 
 document.addEventListener(
     "click",
@@ -13,7 +13,8 @@ document.addEventListener(
 
         if (itemClicked.id.startsWith("orderButton")) {
 
-            completeOrder()
+            completeOrder() 
+            updateFoodStockQuantity(1, 1)
         }
     }
 )

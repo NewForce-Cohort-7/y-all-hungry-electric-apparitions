@@ -4,7 +4,6 @@ import { getDessertPrice } from "./desserts.js"
 
 const drinks = getDrinks()
 
-
 document.addEventListener(
     "change",
     (clickEvent) => {

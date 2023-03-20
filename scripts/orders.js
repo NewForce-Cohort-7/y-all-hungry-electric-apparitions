@@ -1,4 +1,4 @@
-import { getFood, getDrinks, getDesserts, getOrders } from "./database.js"
+import { getFood, getDrinks, getDesserts, getOrders, getFoodStock } from "./database.js"
 
 const foods = getFood()
 const drinks = getDrinks()
@@ -24,8 +24,17 @@ const buildOrderListItem = (order) => {
         }
     )
 
-    let totalCost = (foundFood.price + foundDrink.price + foundDessert.price) * 1.06
+    // const foodStock = getFoodStock()
 
+    // const foundFoodStock = foodStock.find(
+    //     (stock) => {
+    //         return stock.id === stock.foodId
+    //     }
+    // )
+
+    // foundFoodStock.quantity--
+
+    let totalCost = (foundFood.price + foundDrink.price + foundDessert.price) * 1.06
 
     const costString = totalCost.toLocaleString("en-US", {
         style: "currency",
