@@ -1,4 +1,4 @@
-import { getOrderBuilder, getFoodStock, reduceFoodQuantity, getDrinkStock, reduceDrinkQuantity } from "./database.js"
+import { getOrderBuilder, getFoodStock, reduceFoodQuantity, getDrinkStock, reduceDrinkQuantity, getDessertStock, reduceDessertQuantity } from "./database.js"
 
 // function to reduce quantities of food stock every time a food item is ordered with the complete order button
 export const reduceQuantities = () => {
@@ -13,6 +13,12 @@ export const reduceQuantities = () => {
     for (const singleDrinkStock of arrayOfDrinkStock) {
         if (singleDrinkStock.locationId === currentOrder.locationId && singleDrinkStock.drinkId === currentOrder.drinkId) {
             reduceDrinkQuantity(singleDrinkStock.id)
+        }
+    }
+    const arrayOfDessertStock = getDessertStock()
+    for (const singleDessertStock of arrayOfDessertStock) {
+        if (singleDessertStock.locationId === currentOrder.locationId && singleDessertStock.dessertId === currentOrder.dessertId) {
+            reduceDessertQuantity(singleDessertStock.id)
         }
     }
 }

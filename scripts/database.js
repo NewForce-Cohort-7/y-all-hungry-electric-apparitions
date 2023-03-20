@@ -270,3 +270,10 @@ export const reduceDrinkQuantity = (id) => {
         }
     }
 }
+export const reduceDessertQuantity = (id) => {
+    for (const dessertStock of database.dessertStock) {
+        if (dessertStock.id === id) {
+            dessertStock.quantity--
+        }
+    }
+}
