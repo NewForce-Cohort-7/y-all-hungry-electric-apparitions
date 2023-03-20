@@ -26,22 +26,22 @@ const database = {
             id: 1,
             name: 'Chili Dog',
             price: 5,
-            img: 'image1.png',
-            desc: 'A cool description of the food'
+            img: './images/HotDawg1.webp',
+            desc: 'Starts with our premimum dogs topped with our signature sauce and beans.'
         },
         {
             id: 2,
             name: 'Slaw Dog',
             price: 6,
-            img: 'image2.png',
-            desc: 'A cool description of the food'
+            img: './images/HotDawg2.webp',
+            desc: "A dog topped with Grandma's secret slaw recipe"
         },
         {
             id: 3,
             name: 'Deluxe Dog',
             price: 7,
-            img: 'image3.png',
-            desc: 'A cool description of the food'
+            img: './images/HotDawg3.jpg',
+            desc: 'A premium dog topped with sauce, onions, and cheese. '
         },
         {
             id: 99,
@@ -57,19 +57,22 @@ const database = {
             id: 1,
             name: 'Water',
             price: 1,
-            img: 'image1.png',
+            img: './images/Water.jpg',
+            desc: 'Nothing but the best Fuji water for our customers!'
         },
         {
             id: 2,
             name: 'Sweet Tea',
             price: 3,
-            img: 'image2.png',
+            img: './images/SweetTea.jpg',
+            desc: 'Bottled Gold Peak Sweet tea'
         },
         {
             id: 3,
             name: 'Lemonade',
             price: 7,
-            img: 'image3.png',
+            img: './images/Lemonade.jpg',
+            desc: 'Freshly squeezed and served with ice and lemon slices'
         },
         {
             id: 99,
@@ -84,22 +87,22 @@ const database = {
             id: 1,
             name: 'Vanilla Cone',
             price: 3,
-            img: 'image1.png',
-            desc: 'A cool description of the food'
+            img: './images/VanillaCone.jpg',
+            desc: 'A sweet treat for kids or those young at heart'
         },
         {
             id: 2,
             name: 'Chocolate Swirl',
             price: 4,
-            img: 'image2.png',
-            desc: 'A cool description of the food'
+            img: './images/TwistedCone.jpg',
+            desc: 'The perfect blend of chocolate and vanilla'
         },
         {
             id: 3,
             name: 'Hot Fudge Sundae',
             price: 5,
-            img: 'image3.png',
-            desc: 'A cool description of the food'
+            img: './images/HotFudgeSundae.jpg',
+            desc: 'Vanilla ice cream topped with hot fudge, whipped cream and sprinkles'
         },
         {
             id: 99,
