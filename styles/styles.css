@@ -3,12 +3,18 @@ body, article {
     border: darkgreen solid 4px;
     text-align: center;
     margin: 8px;
-    width: 600px;
     padding: 8px;
-
+    filter: drop-shadow(2px 2px 1px black);
 }
 
+button {
+    filter: drop-shadow(3px 3px 2px black);
+}
 
 main {
     margin-left: 20px;
+}
+
+ul, li {
+    list-style-type: none;
 }
