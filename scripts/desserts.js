@@ -1,6 +1,15 @@
-import { getDesserts, setDessert } from "./database.js"
+import { getDesserts, setDessert, getDessertStock, getOrderBuilder } from "./database.js"
 
 const desserts = getDesserts()
+
+document.addEventListener(
+    "change",
+    (clickEvent) => {
+        if (clickEvent.target.id === "desserts") {
+            setDessert(parseInt(clickEvent.target.value))
+        }
+    }
+)
 
 export const Desserts = () => {
 
@@ -9,13 +18,23 @@ export const Desserts = () => {
     html += '<option value="0">Select a dessert</option>'
     
     const arrayOfOptions = desserts.map( (dessert) => {
-        return `<option value="${dessert.id}">${dessert.name}</option>`
+    
+        const arrayOfDessertStock = getDessertStock()
+        const currentOrder = getOrderBuilder()
+
+        for(const dessertStock of arrayOfDessertStock) {
+            let matchingId = null
+            let matchingQuantity = null
+            if(dessertStock.locationId === currentOrder.locationId && dessertStock.quantity > 0){
+                matchingId = dessertStock.dessertId}
+            if( matchingId === dessert.id){
+                return `<option value="${dessert.id}">${dessert.name}</option>`
+            }
+        }
     })
 
-    // Join all of the strings in the array into a single string
     html += arrayOfOptions.join("")
     html += "</select>"
-
     return html
 }
 
@@ -24,18 +43,24 @@ document.addEventListener("change", (event) => {
         let matchedDessert = null
         for(const singleDessert of desserts){
             if(singleDessert.id === parseInt(event.target.value)){
-                matchedDessert = singleDessert.name
+                matchedDessert = singleDessert
                 console.log(matchedDessert)
                 setDessert(singleDessert.id)
             }
         }
-
+        
+        let priceString = matchedDessert.price.toLocaleString("en-US", {
+            style: "currency",
+            currency: "USD",
+            maximumFractionDigits: 0
+        })
         //if location is selected, display address
         if(matchedDessert !== null){
-            document.querySelector('#dessert-order').innerHTML = `${matchedDessert}`
+            document.querySelector('#dessert-order').innerHTML = `${matchedDessert.name} - ${priceString}`
         }
-
+        
         //if null, order-location is blank
         else{document.querySelector('#dessert-order').innerHTML = ''}
-    }
-})
+        }
+        })
+    
