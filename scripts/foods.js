@@ -22,7 +22,7 @@ export const generateFoodHTML = () => {
                 matchingQuantity = foodStock.quantity
             }
             if (matchingId === food.id) {
-                if (matchingQuantity === 1000) {
+                if (food.id === 99) {
                     return `<option value="${food.id}">${food.name}`
                 } else {
                     return `<option value="${food.id}">${food.name} - ${matchingQuantity} in stock</option>`
