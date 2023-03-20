@@ -19,21 +19,21 @@ export const createHTML = () => {
     return `
         <h1>Ya'll Hungry!?</h1>
 
-        <article id='locations'>
+        <article id='options__locations'>
             <h2>Locations</h2>
             ${createLocationList()}
         </article>
         
-        <article id='foods'>
+        <article id='options__foods'>
             <h2>Foods</h2>
             ${generateFoodHTML()}
         </article>
         
-        <article id='drinks'>
+        <article id='options__drinks'>
             ${Drinks()}
         </article>
         
-        <article id='desserts'>
+        <article id='options__desserts'>
             <h2>Desserts</h2>
             ${Desserts()}
         </article>
