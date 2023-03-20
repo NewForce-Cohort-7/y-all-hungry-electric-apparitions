@@ -1,4 +1,4 @@
-import { getFood} from "./database.js"
+import { getFood, setFood } from "./database.js"
 
 const arrayOfFood = getFood()
 
@@ -23,6 +23,7 @@ export const generateFoodHTML = () => {
                 if(singleFood.id === parseInt(event.target.value)){
                     matchedFood = singleFood.name
                     console.log(matchedFood)
+                    setFood(singleFood.id)
                 }
             }
     

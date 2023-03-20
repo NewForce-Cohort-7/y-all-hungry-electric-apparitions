@@ -23,12 +23,16 @@ export const Drinks = () => {
 
         for(const drinkStock of arrayOfDrinkStock) {
             let matchingId = null
-            let matchingQuantity = null
+            let matchingQuantity = 0
             if(drinkStock.locationId === currentOrder.locationId && drinkStock.quantity > 0){
-                matchingId = drinkStock.drinkId}
+                matchingId = drinkStock.drinkId
+                matchingQuantity = drinkStock.quantity}
             if( matchingId === drink.id){
-                return `<option value="${drink.id}">${drink.name}</option>`
-            }
+                if (matchingQuantity === 1000) {
+                return `<option value="${drink.id}">${drink.name}`
+            } else {
+                return `<option value="${drink.id}">${drink.name} - ${matchingQuantity} in stock</option>`
+            }}
         }
     })
 
