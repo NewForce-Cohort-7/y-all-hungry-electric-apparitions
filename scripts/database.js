@@ -47,8 +47,8 @@ const database = {
             id: 99,
             name: 'None',
             price: 0,
-            img: '',
-            desc: ''
+            img: './images/None.jpg',
+            desc: 'No selection Made'
         }
     ],
 
@@ -78,7 +78,8 @@ const database = {
             id: 99,
             name: 'None',
             price: 0,
-            img: '',
+            img: './images/None.jpg',
+            desc: 'No Selection made.'
         }
     ],
 
@@ -108,8 +109,8 @@ const database = {
             id: 99,
             name: 'None',
             price: 0,
-            img: '',
-            desc: ''
+            img: './images/None.jpg',
+            desc: 'No selection made'
         }
     ],
 
