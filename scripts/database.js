@@ -191,12 +191,17 @@ export const getOrderBuilder = () => {
     return database.orderBuilder
 }
 
+
 export const getDrinkStock = () => {
     return database.drinkStock.map(obj => ({...obj}))
 }
 
 export const getDessertStock = () => {
     return database.dessertStock.map(obj => ({...obj}))
+}
+
+export const getFoodStock = () => {
+    return database.foodStock.map(obj => ({...obj}))
 }
 
 
@@ -213,6 +218,11 @@ export const setDrink = (id) => {
 
 export const setDessert = (id) => {
     database.orderBuilder.dessertId = id
+    console.log(database.orderBuilder)
+}
+
+export const setFood = (id) => {
+    database.orderBuilder.foodId = id
     console.log(database.orderBuilder)
 }
 
