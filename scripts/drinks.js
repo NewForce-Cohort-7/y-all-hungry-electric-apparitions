@@ -2,6 +2,7 @@ import { getDrinks, setDrinks } from "./database.js"
 
 const drinks = getDrinks()
 
+
 document.addEventListener(
     "change",
     (clickEvent) => {
