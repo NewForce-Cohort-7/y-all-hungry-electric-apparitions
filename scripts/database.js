@@ -233,4 +233,3 @@ export const completeOrder = () => {
         document.dispatchEvent( new CustomEvent("stateChanged") )
 }
 
-
