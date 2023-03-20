@@ -195,6 +195,10 @@ export const getDrinkStock = () => {
     return database.drinkStock.map(obj => ({...obj}))
 }
 
+export const getDessertStock = () => {
+    return database.dessertStock.map(obj => ({...obj}))
+}
+
 
 export const setLocation = (id) => {
     database.orderBuilder.locationId = id
@@ -207,7 +211,10 @@ export const setDrink = (id) => {
     console.log(database.orderBuilder)
 }
 
-
+export const setDessert = (id) => {
+    database.orderBuilder.dessertId = id
+    console.log(database.orderBuilder)
+}
 
 export const completeOrder = () => {
 
