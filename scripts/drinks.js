@@ -80,8 +80,12 @@ document.addEventListener("change", (event) => {
         })
 
         //if location is selected, display address
-        if (matchedDrink !== null) {
-            document.querySelector('#drink-order').innerHTML = `${matchedDrink.name} - ${priceString}`
+        if(matchedDrink !== null){
+            document.querySelector('#drink-order').innerHTML = `
+            <img class="drink" style="width: 100px" src="${matchedDrink.img}" alt="drink">
+            <div class="drink-name">${matchedDrink.name} </div>
+            <div class="drink-price"> ${priceString}</div>
+            <div class="drink-desc"> ${matchedDrink.desc}</div>`
         }
 
         //if null, order-location is blank
