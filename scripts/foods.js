@@ -14,18 +14,20 @@ export const generateFoodHTML = () => {
 
         for (const foodStock of arrayOfFoodStock) {
             let matchingId = null
-            let matchingQuantity = null
+            let matchingQuantity = 0
             if (foodStock.locationId === currentOrder.locationId && foodStock.quantity > 0) {
                 matchingId = foodStock.foodId
+                matchingQuantity = foodStock.quantity
             }
             if (matchingId === food.id) {
-                
-                return `<option value="${food.id}">${food.name}</option>`
+                if (matchingQuantity === 1000) {
+                    return `<option value="${food.id}">${food.name}`
+                } else {
+                 return `<option value="${food.id}">${food.name} - ${matchingQuantity} in stock</option>`
             }
-
         }
     }
-    )
+})
     html += arrayOfOptions.join("")
     html += `</select>`
 

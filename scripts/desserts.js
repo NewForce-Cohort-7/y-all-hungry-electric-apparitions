@@ -24,14 +24,19 @@ export const Desserts = () => {
 
         for(const dessertStock of arrayOfDessertStock) {
             let matchingId = null
-            let matchingQuantity = null
+            let matchingQuantity = 0
             if(dessertStock.locationId === currentOrder.locationId && dessertStock.quantity > 0){
-                matchingId = dessertStock.dessertId}
+                matchingId = dessertStock.dessertId
+                matchingQuantity = dessert.quantity}  
             if( matchingId === dessert.id){
+                if (matchingQuantity === 1000) {
                 return `<option value="${dessert.id}">${dessert.name}</option>`
+            } else {
+                return `<option value="${dessert.id}">${dessert.name} - ${matchingQuantity} in stock</option>`
             }
         }
-    })
+    }
+})
 
     html += arrayOfOptions.join("")
     html += "</select>"

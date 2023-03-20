@@ -34,9 +34,10 @@ export const Drinks = () => {
                 return `<option value="${drink.id}">${drink.name}`
             } else {
                 return `<option value="${drink.id}">${drink.name} - ${matchingQuantity} in stock</option>`
-            }}
+            }
         }
-    })
+    }
+})
 
     html += arrayOfOptions.join("")
     html += "</select>"
