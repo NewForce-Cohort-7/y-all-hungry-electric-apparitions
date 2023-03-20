@@ -6,7 +6,6 @@ import { Orders } from "./orders.js"
 import { completeOrder} from "./database.js"
 import { reduceQuantities } from "./stock.js"
 
-
 document.addEventListener("click",
     (event) => {
         if (event.target.id.startsWith("orderButton")) {
@@ -14,7 +13,6 @@ document.addEventListener("click",
             completeOrder()
         }
     })
-
 
 export const createHTML = () => {
 

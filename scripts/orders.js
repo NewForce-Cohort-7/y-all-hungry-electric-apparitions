@@ -1,4 +1,4 @@
-import { getFood, getDrinks, getDesserts, getOrders } from "./database.js"
+import { getFood, getDrinks, getDesserts, getOrders, getFoodStock } from "./database.js"
 
 const foods = getFood()
 const drinks = getDrinks()

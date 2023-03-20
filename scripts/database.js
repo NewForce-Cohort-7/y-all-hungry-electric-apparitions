@@ -254,13 +254,19 @@ export const completeOrder = () => {
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
-
-
 //export function that takes current stock of a food item at a specific location and reduces it by one when an order is submitted 
 export const reduceFoodQuantity = (id) => {
     for (const foodStock of database.foodStock) {
         if (foodStock.id === id) {
             foodStock.quantity--
+        }
+    }
+}
+
+export const reduceDrinkQuantity = (id) => {
+    for (const drinkStock of database.drinkStock) {
+        if (drinkStock.id === id) {
+            drinkStock.quantity--
         }
     }
 }
