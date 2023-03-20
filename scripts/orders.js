@@ -4,13 +4,13 @@ const foods = getFood()
 const drinks = getDrinks()
 const desserts = getDesserts()
 
+
 const buildOrderListItem = (order) => {
 
     const foundFood = foods.find(
         (food) => {
             return food.id === order.foodId
-        }
-    )
+        })
 
     const foundDrink = drinks.find(
         (drink) => {
@@ -24,15 +24,12 @@ const buildOrderListItem = (order) => {
         }
     )
 
-    // const foodStock = getFoodStock()
-
-    // const foundFoodStock = foodStock.find(
-    //     (stock) => {
-    //         return stock.id === stock.foodId
-    //     }
-    // )
-
-    // foundFoodStock.quantity--
+    //conditional that makes sure a food, drink, and dessert have been selected. otherwise, request selection from user and refresh
+    if(!foundFood || !foundDrink || !foundDessert){
+        window.alert('Please select an option from each dropdown menu before submitting an order.')
+        location.reload()
+        return
+    }
 
     let totalCost = (foundFood.price + foundDrink.price + foundDessert.price) * 1.06
 
