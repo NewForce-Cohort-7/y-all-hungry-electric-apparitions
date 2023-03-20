@@ -24,7 +24,7 @@ const buildOrderListItem = (order) => {
         }
     )
 
-    let totalCost = foundFood.price + foundDrink.price + foundDessert.price
+    let totalCost = (foundFood.price + foundDrink.price + foundDessert.price) * 1.06
 
 
     const costString = totalCost.toLocaleString("en-US", {
@@ -33,7 +33,7 @@ const buildOrderListItem = (order) => {
     })
 
     return `<li>
-            Order #${order.id} cost ${costString}
+            Order #${order.id} total: ${costString} (incl tax)
     </li>`
 }
 
