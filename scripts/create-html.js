@@ -2,6 +2,17 @@ import { Desserts } from "./desserts.js"
 import { createLocationList } from "./locations.js"
 import { generateFoodHTML } from "./foods.js"
 import { Drinks } from "./drinks.js"
+import { Orders } from "./orders.js"
+import { completeOrder} from "./database.js"
+import { reduceQuantities } from "./stock.js"
+
+document.addEventListener("click",
+    (event) => {
+        if (event.target.id.startsWith("orderButton")) {
+            reduceQuantities()
+            completeOrder()
+        }
+    })
 
 export const createHTML = () => {
 
@@ -37,10 +48,12 @@ export const createHTML = () => {
      
         <article>
             <button id="orderButton">Place Order</button>
+            <div id='subtotal'></div>
         </article>
 
         <article id="orders">
             <h2>Orders</h2>
+            ${Orders()}
         </article>
     `
 }
