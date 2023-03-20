@@ -37,6 +37,12 @@ export const Drinks = () => {
     return html
 }
 
+export const getDrinkPrice = () => {
+    return drinkPrice
+}
+
+let drinkPrice = 0
+
 document.addEventListener("change", (event) => {
     if (event.target.id === "drinks") {
         let matchedDrink = null
@@ -46,6 +52,8 @@ document.addEventListener("change", (event) => {
                 setDrink(singleDrink.id)
             }
         }
+
+        drinkPrice = matchedDrink.price
 
         let priceString = matchedDrink.price.toLocaleString("en-US", {
             style: "currency",

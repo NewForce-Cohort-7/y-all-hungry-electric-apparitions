@@ -27,6 +27,9 @@ export const createHTML = () => {
             ${Desserts()}
         </article>
 
+        <article id="current-order">
+        </article>
+
         <article id="currentOrder">
             <h2> Current Order </h2>
             <section id='order-location'></section>
