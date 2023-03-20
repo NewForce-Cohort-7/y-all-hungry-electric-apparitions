@@ -1,16 +1,16 @@
-import { getFood, getDrinks, getDesserts, getOrders } from "./database.js"
+import { getFood, getDrinks, getDesserts, getOrders, getFoodStock } from "./database.js"
 
 const foods = getFood()
 const drinks = getDrinks()
 const desserts = getDesserts()
+
 
 const buildOrderListItem = (order) => {
 
     const foundFood = foods.find(
         (food) => {
             return food.id === order.foodId
-        }
-    )
+        })
 
     const foundDrink = drinks.find(
         (drink) => {
@@ -24,8 +24,14 @@ const buildOrderListItem = (order) => {
         }
     )
 
-    let totalCost = (foundFood.price + foundDrink.price + foundDessert.price) * 1.06
+    //conditional that makes sure a food, drink, and dessert have been selected. otherwise, request selection from user and refresh
+    if(!foundFood || !foundDrink || !foundDessert){
+        window.alert('Please select an option from each dropdown menu before submitting an order.')
+        location.reload()
+        return
+    }
 
+    let totalCost = (foundFood.price + foundDrink.price + foundDessert.price) * 1.06
 
     const costString = totalCost.toLocaleString("en-US", {
         style: "currency",
