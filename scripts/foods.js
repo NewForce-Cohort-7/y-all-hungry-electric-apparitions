@@ -1,4 +1,4 @@
-import { getFood, setFood, getFoodStock, getOrderBuilder} from "./database.js"
+import { getFood, setFood, getFoodStock, getOrderBuilder } from "./database.js"
 import { getDrinkPrice } from "./drinks.js"
 import { getDessertPrice } from "./desserts.js"
 
@@ -25,11 +25,11 @@ export const generateFoodHTML = () => {
                 if (matchingQuantity === 1000) {
                     return `<option value="${food.id}">${food.name}`
                 } else {
-                 return `<option value="${food.id}">${food.name} - ${matchingQuantity} in stock</option>`
+                    return `<option value="${food.id}">${food.name} - ${matchingQuantity} in stock</option>`
+                }
             }
         }
-    }
-})
+    })
     html += arrayOfOptions.join("")
     html += `</select>`
 
@@ -42,31 +42,31 @@ export const getFoodPrice = () => {
     return foodPrice
 }
 
-    document.addEventListener("change", (event) => {
-        if (event.target.id === "foods") {
-            let matchedFood = null
-            for(const singleFood of arrayOfFood){
-                if(singleFood.id === parseInt(event.target.value)){
-                    matchedFood = singleFood
-                    setFood(singleFood.id)
-                }
+document.addEventListener("change", (event) => {
+    if (event.target.id === "foods") {
+        let matchedFood = null
+        for (const singleFood of arrayOfFood) {
+            if (singleFood.id === parseInt(event.target.value)) {
+                matchedFood = singleFood
+                setFood(singleFood.id)
             }
+        }
 
-            foodPrice = matchedFood.price
-            const drinkPrice = getDrinkPrice()
-            const dessertPrice = getDessertPrice()
-            const currentSubtotal = foodPrice + drinkPrice + dessertPrice
-            let subtotalString = currentSubtotal.toLocaleString("en-US", {
-                style: "currency",
-                currency: "USD",
-                maximumFractionDigits: 2
-            })
+        foodPrice = matchedFood.price
+        const drinkPrice = getDrinkPrice()
+        const dessertPrice = getDessertPrice()
+        const currentSubtotal = foodPrice + drinkPrice + dessertPrice
+        let subtotalString = currentSubtotal.toLocaleString("en-US", {
+            style: "currency",
+            currency: "USD",
+            maximumFractionDigits: 2
+        })
 
-            let priceString = matchedFood.price.toLocaleString("en-US", {
-                style: "currency",
-                currency: "USD",
-                maximumFractionDigits: 2
-            })
+        let priceString = matchedFood.price.toLocaleString("en-US", {
+            style: "currency",
+            currency: "USD",
+            maximumFractionDigits: 2
+        })
 
         //if food is selected, display hot dog name
         if (matchedFood !== null) {
@@ -79,6 +79,3 @@ export const getFoodPrice = () => {
         document.querySelector('#subtotal').innerHTML = `Subtotal: ${subtotalString}`
     }
 })
-
-
-
