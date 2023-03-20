@@ -2,6 +2,21 @@ import { Desserts } from "./desserts.js"
 import { createLocationList } from "./locations.js"
 import { generateFoodHTML } from "./foods.js"
 import { Drinks } from "./drinks.js"
+import { Orders } from "./orders.js"
+import { completeOrder } from "./database.js"
+
+document.addEventListener(
+    "click",
+    (event) => {
+             
+        const itemClicked = event.target
+
+        if (itemClicked.id.startsWith("orderButton")) {
+
+            completeOrder()
+        }
+    }
+)
 
 export const createHTML = () => {
 
@@ -44,6 +59,7 @@ export const createHTML = () => {
 
         <article id="orders">
             <h2>Orders</h2>
+            ${Orders()}
         </article>
     `
 }
