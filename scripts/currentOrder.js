@@ -30,9 +30,11 @@ export const createCurrentOrderHTML = () => {
     if (currentLocation !== undefined){
         HTMLString += `<section id='current-order-location'>${currentLocation.address}</section>`
     }   
+
     if (currentFood !== undefined){
         HTMLString += `<section id="current-order-food">${currentFood.name}</section>`
     }
+    
     if (currentDrink !== undefined){
         HTMLString += `<section id="current-order-drink">${currentDrink.name}</section>`
     }
