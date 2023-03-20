@@ -40,7 +40,7 @@ const database = {
             id: 3, 
             name: 'Deluxe Dog',
             price: 7,
-            img: './images.HotDawg3.jpg',
+            img: './images/HotDawg3.jpg',
             desc: 'A premium dog topped with sauce, onions, and cheese. '
         },
         {
@@ -57,21 +57,21 @@ const database = {
             id: 1, 
             name: 'Water',
             price: 1,
-            img: './images.Water.jpg',
+            img: './images/Water.jpg',
             desc: 'Nothing but the best Fuji water for our customers!'
         },
         {
             id: 2, 
             name: 'Sweet Tea',
             price: 3,
-            img: './images.SweetTea.jpg',
+            img: './images/SweetTea.jpg',
             desc: 'Bottled Gold Peak Sweet tea'
         },
         {
             id: 3, 
             name: 'Lemonade',
             price: 7,
-            img: './images.Lemonade.jpg',
+            img: './images/Lemonade.jpg',
             desc: 'Freshly squeezed and served with ice and lemon slices'
         },
         {
@@ -87,21 +87,21 @@ const database = {
             id: 1, 
             name: 'Vanilla Cone',
             price: 3,
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLlDWp09g1U1hMudkQKB9F2c6qWOtEAR7u1Q&usqp=CAU',
+            img: './images/VanillaCone.jpg',
             desc: 'A sweet treat for kids or those young at heart'
         },
         {
             id: 2, 
             name: 'Chocolate Swirl',
             price: 4,
-            img: 'https://preparedfoodphotos.com/assets/cache/idNTUyM2Q1YmU2MDViNQ==-5666de81a854fce7e553a80234cd6119.jpg',
+            img: './images/TwistedCone.jpg',
             desc: 'The perfect blend of chocolate and vanilla'
         },
         {
             id: 3, 
             name: 'Hot Fudge Sundae',
             price: 5,
-            img: 'https://preppykitchen.com/wp-content/uploads/2021/04/Hot-Fudge-Sundae-Feature.jpg',
+            img: './images/HotFudgeSundae.jpg',
             desc: 'Vanilla ice cream topped with hot fudge, whipped cream and sprinkles'
         },
         {
