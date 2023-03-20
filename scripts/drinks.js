@@ -1,4 +1,6 @@
 import { getDrinks, setDrink, getDrinkStock, getOrderBuilder} from "./database.js"
+import { getFoodPrice } from "./foods.js"
+import { getDessertPrice } from "./desserts.js"
 
 const drinks = getDrinks()
 
@@ -18,7 +20,7 @@ export const Drinks = () => {
     html += '<select id="drinks">'
     html += '<option value="0">Select a drink</option>'
 
-    const arrayOfOptions = drinks.map(drink => {
+    const arrayOfOptions = drinks.map((drink) => {
 
         const arrayOfDrinkStock = getDrinkStock()
         const currentOrder = getOrderBuilder()
@@ -44,6 +46,12 @@ export const Drinks = () => {
     return html
 }
 
+let drinkPrice = 0
+
+export const getDrinkPrice = () => {
+    return drinkPrice
+}
+
 document.addEventListener("change", (event) => {
     if (event.target.id === "drinks") {
         let matchedDrink = null
@@ -54,10 +62,21 @@ document.addEventListener("change", (event) => {
             }
         }
 
+        drinkPrice = matchedDrink.price
+        const foodPrice = getFoodPrice()
+        const dessertPrice = getDessertPrice()
+        const currentSubtotal = foodPrice + drinkPrice + dessertPrice
+        let subtotalString = currentSubtotal.toLocaleString("en-US", {
+            style: "currency",
+            currency: "USD",
+            maximumFractionDigits: 2
+        })
+
+
         let priceString = matchedDrink.price.toLocaleString("en-US", {
             style: "currency",
             currency: "USD",
-            maximumFractionDigits: 0
+            maximumFractionDigits: 2
         })
 
         //if location is selected, display address
@@ -67,5 +86,7 @@ document.addEventListener("change", (event) => {
 
         //if null, order-location is blank
         else{document.querySelector('#drink-order').innerHTML = ''}
+
+        document.querySelector('#subtotal').innerHTML = `Subtotal: ${subtotalString}`
     }
 })

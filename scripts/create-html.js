@@ -18,6 +18,8 @@ document.addEventListener(
     }
 )
 
+
+
 export const createHTML = () => {
 
     return `
@@ -42,6 +44,9 @@ export const createHTML = () => {
             ${Desserts()}
         </article>
 
+        <article id="current-order">
+        </article>
+
         <article id="currentOrder">
             <h2> Current Order </h2>
             <section id='order-location'></section>
@@ -52,7 +57,10 @@ export const createHTML = () => {
      
         <article>
             <button id="orderButton">Place Order</button>
+            <div id='subtotal'></div>
         </article>
+
+
 
         <article id="orders">
             <h2>Orders</h2>

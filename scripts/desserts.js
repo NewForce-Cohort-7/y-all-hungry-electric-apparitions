@@ -1,4 +1,7 @@
 import { getDesserts, setDessert, getDessertStock, getOrderBuilder } from "./database.js"
+import { getFoodPrice } from "./foods.js"
+import { getDrinkPrice } from "./drinks.js"
+
 
 const desserts = getDesserts()
 
@@ -27,7 +30,7 @@ export const Desserts = () => {
             let matchingQuantity = 0
             if(dessertStock.locationId === currentOrder.locationId && dessertStock.quantity > 0){
                 matchingId = dessertStock.dessertId
-                matchingQuantity = dessert.quantity}  
+                matchingQuantity = dessertStock.quantity}  
             if( matchingId === dessert.id){
                 if (matchingQuantity === 1000) {
                 return `<option value="${dessert.id}">${dessert.name}</option>`
@@ -43,21 +46,36 @@ export const Desserts = () => {
     return html
 }
 
+let dessertPrice = 0
+
+export const getDessertPrice = () => {
+    return dessertPrice
+}
+
 document.addEventListener("change", (event) => {
     if (event.target.id === "desserts") {
         let matchedDessert = null
         for(const singleDessert of desserts){
             if(singleDessert.id === parseInt(event.target.value)){
                 matchedDessert = singleDessert
-                console.log(matchedDessert)
                 setDessert(singleDessert.id)
             }
         }
+
+        dessertPrice = matchedDessert.price
+        const foodPrice = getFoodPrice()
+        const drinkPrice = getDrinkPrice()
+        const currentSubtotal = foodPrice + drinkPrice + dessertPrice
+        let subtotalString = currentSubtotal.toLocaleString("en-US", {
+            style: "currency",
+            currency: "USD",
+            maximumFractionDigits: 2
+        })
         
         let priceString = matchedDessert.price.toLocaleString("en-US", {
             style: "currency",
             currency: "USD",
-            maximumFractionDigits: 0
+            maximumFractionDigits: 2
         })
         //if location is selected, display address
         if(matchedDessert !== null){
@@ -66,6 +84,8 @@ document.addEventListener("change", (event) => {
         
         //if null, order-location is blank
         else{document.querySelector('#dessert-order').innerHTML = ''}
-        }
-        })
+
+        document.querySelector('#subtotal').innerHTML = `Subtotal: ${subtotalString}`
+    }  
+})
     
