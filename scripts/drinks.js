@@ -1,8 +1,9 @@
-import { getDrinks, setDrink, getDrinkStock, getOrderBuilder } from "./database.js"
+import { getDrinks, setDrink, getDrinkStock, getOrderBuilder} from "./database.js"
 import { getFoodPrice } from "./foods.js"
 import { getDessertPrice } from "./desserts.js"
 
 const drinks = getDrinks()
+
 
 document.addEventListener(
     "change",
@@ -24,22 +25,21 @@ export const Drinks = () => {
         const arrayOfDrinkStock = getDrinkStock()
         const currentOrder = getOrderBuilder()
 
-        for (const drinkStock of arrayOfDrinkStock) {
+        for(const drinkStock of arrayOfDrinkStock) {
             let matchingId = null
             let matchingQuantity = 0
-            if (drinkStock.locationId === currentOrder.locationId && drinkStock.quantity > 0) {
+            if(drinkStock.locationId === currentOrder.locationId && drinkStock.quantity > 0){
                 matchingId = drinkStock.drinkId
-                matchingQuantity = drinkStock.quantity
-            }
-            if (matchingId === drink.id) {
-                if (matchingQuantity === 1000) {
-                    return `<option value="${drink.id}">${drink.name}`
-                } else {
-                    return `<option value="${drink.id}">${drink.name} - ${matchingQuantity} in stock</option>`
-                }
+                matchingQuantity = drinkStock.quantity}
+            if( matchingId === drink.id){
+                if (drink.id === 99) {
+                return `<option value="${drink.id}">${drink.name}`
+            } else {
+                return `<option value="${drink.id}">${drink.name} - ${matchingQuantity} in stock</option>`
             }
         }
-    })
+    }
+})
 
     html += arrayOfOptions.join("")
     html += "</select>"
@@ -55,8 +55,8 @@ export const getDrinkPrice = () => {
 document.addEventListener("change", (event) => {
     if (event.target.id === "drinks") {
         let matchedDrink = null
-        for (const singleDrink of drinks) {
-            if (singleDrink.id === parseInt(event.target.value)) {
+        for(const singleDrink of drinks){
+            if(singleDrink.id === parseInt(event.target.value)){
                 matchedDrink = singleDrink
                 setDrink(singleDrink.id)
             }
@@ -89,7 +89,7 @@ document.addEventListener("change", (event) => {
         }
 
         //if null, order-location is blank
-        else { document.querySelector('#drink-order').innerHTML = '' }
+        else{document.querySelector('#drink-order').innerHTML = ''}
 
         document.querySelector('#subtotal').innerHTML = `Subtotal: ${subtotalString}`
     }

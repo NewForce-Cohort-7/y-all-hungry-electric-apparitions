@@ -33,7 +33,7 @@ export const Desserts = () => {
                 matchingQuantity = dessertStock.quantity
             }
             if (matchingId === dessert.id) {
-                if (matchingQuantity === 1000) {
+                if (dessert.id === 99) {
                     return `<option value="${dessert.id}">${dessert.name}</option>`
                 } else {
                     return `<option value="${dessert.id}">${dessert.name} - ${matchingQuantity} in stock</option>`
