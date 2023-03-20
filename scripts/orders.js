@@ -33,6 +33,13 @@ const buildOrderListItem = (order) => {
 
     let totalCost = (foundFood.price + foundDrink.price + foundDessert.price) * 1.06
 
+       //conditional that makes sure cost exceeds .99
+       if(totalCost < 1){
+        window.alert('Please select at least one item for your order.')
+        location.reload()
+        return
+    }
+
     const costString = totalCost.toLocaleString("en-US", {
         style: "currency",
         currency: "USD"
