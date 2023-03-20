@@ -33,7 +33,7 @@ export const Desserts = () => {
                 matchingQuantity = dessertStock.quantity
             }
             if (matchingId === dessert.id) {
-                if (matchingQuantity === 1000) {
+                if (dessert.id === 99) {
                     return `<option value="${dessert.id}">${dessert.name}</option>`
                 } else {
                     return `<option value="${dessert.id}">${dessert.name} - ${matchingQuantity} in stock</option>`
@@ -79,10 +79,15 @@ document.addEventListener("change", (event) => {
             maximumFractionDigits: 2
         })
         //if location is selected, display address
-        if (matchedDessert !== null) {
-            document.querySelector('#dessert-order').innerHTML = `${matchedDessert.name} - ${priceString}`
+        if(matchedDessert !== null){
+            document.querySelector('#dessert-order').innerHTML = `
+            <img class="dessert" style="width:100px" src="${matchedDessert.img}" alt="dessert">
+            <div class="dessert-name">${matchedDessert.name}</div> 
+            <div class="dessert-price">${priceString}</div> 
+            <div class="dessert-desc">${matchedDessert.desc}</div> `
         }
-
+        
+        
         //if null, order-location is blank
         else { document.querySelector('#dessert-order').innerHTML = '' }
 

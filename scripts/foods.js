@@ -22,7 +22,7 @@ export const generateFoodHTML = () => {
                 matchingQuantity = foodStock.quantity
             }
             if (matchingId === food.id) {
-                if (matchingQuantity === 1000) {
+                if (food.id === 99) {
                     return `<option value="${food.id}">${food.name}`
                 } else {
                     return `<option value="${food.id}">${food.name} - ${matchingQuantity} in stock</option>`
@@ -70,7 +70,11 @@ document.addEventListener("change", (event) => {
 
         //if food is selected, display hot dog name
         if (matchedFood !== null) {
-            document.querySelector('#food-order').innerHTML = `${matchedFood.name} - ${priceString}`
+            document.querySelector('#food-order').innerHTML = `
+            <img class="hot_dog" style="width:100px" src="${matchedFood.img}" alt="hotdog">
+            <div class="food-name">${matchedFood.name}</div> 
+            <div class="food-price">${priceString}</div> 
+            <div class="food-desc">${matchedFood.desc}</div> `
         }
 
         //if null, order-food is blank
