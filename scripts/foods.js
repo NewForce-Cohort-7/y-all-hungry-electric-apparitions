@@ -72,10 +72,10 @@ document.addEventListener("change", (event) => {
         if (matchedFood !== null) {
             document.querySelector('#food-order').innerHTML = `
             <div class="card m-4 p-2">
-                <img class="card-img-top hot_dog align-self-center" style="width:100px" src="${matchedFood.img}" alt="hotdog">
+                <img class="card-img-top hot_dog align-self-center" style="width:100px;height:auto" src="${matchedFood.img}" alt="hotdog">
                 <div class="card-body">
-                    <div class="food-name card-title">${matchedFood.name}</div> 
-                    <div class="food-price card-text">${priceString}</div> 
+                    <div class="food-name card-title"><b>${matchedFood.name}</b></div> 
+                    <div class="food-price card-text"><i>${priceString}</i></div> 
                     <div class="food-desc card-text">${matchedFood.desc}</div> 
                 </div>
             </div>`
