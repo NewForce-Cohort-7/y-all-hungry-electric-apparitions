@@ -1,14 +1,35 @@
+/* import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Mallanna&display=swap');
+
+/* customize scrollbar */
+::-webkit-scrollbar {width: 13px}
+::-webkit-scrollbar-track {background: darkgreen}
+::-webkit-scrollbar-thumb {background: rgb(176, 241, 168)}
+
+
 body, article {
+    font-family: 'Inter';
     background-color: rgb(176, 241, 168);
-    border: darkgreen solid 4px;
     text-align: center;
     margin: 8px;
     padding: 8px;
-    filter: drop-shadow(2px 2px 1px black);
+}
+
+article{
+    border: darkgreen solid 4px;
+    box-shadow: 2px 2px 1px rgb(0 0 0 / 80%);
+    border-radius: 25px;
+}
+
+h1{
+    font-weight: 900;
 }
 
 button {
     filter: drop-shadow(3px 3px 2px black);
+    margin: 10px;
 }
 
 main {
@@ -17,4 +38,19 @@ main {
 
 ul, li {
     list-style-type: none;
+}
+
+#order-location{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#subtotal {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 10px;
+}
+
+#orders {
+    font-size: 20px;
 }

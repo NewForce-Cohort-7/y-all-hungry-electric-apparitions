@@ -17,8 +17,8 @@ document.addEventListener(
 export const Desserts = () => {
 
 
-    let html = '<select id="desserts">'
-    html += '<option value="0">Select a dessert</option>'
+    let html = '<select id="desserts" class="form-select mx-auto" style="width: 250px;">'
+    html += '<option value="0">Pick Your Dessert</option>'
 
     const arrayOfOptions = desserts.map((dessert) => {
 
@@ -81,10 +81,14 @@ document.addEventListener("change", (event) => {
         //if location is selected, display address
         if(matchedDessert !== null){
             document.querySelector('#dessert-order').innerHTML = `
-            <img class="dessert" style="width:100px" src="${matchedDessert.img}" alt="dessert">
-            <div class="dessert-name">${matchedDessert.name}</div> 
-            <div class="dessert-price">${priceString}</div> 
-            <div class="dessert-desc">${matchedDessert.desc}</div> `
+            <div class="card m-4 p-2">
+                <img class="card-img-top hot_dog align-self-center" style="width:100px" src="${matchedDessert.img}" alt="hotdog">
+                <div class="card-body">
+                    <div class="food-name card-title">${matchedDessert.name}</div> 
+                    <div class="food-price card-text">${priceString}</div> 
+                    <div class="food-desc card-text">${matchedDessert.desc}</div> 
+                </div>
+            </div>`
         }
         
         

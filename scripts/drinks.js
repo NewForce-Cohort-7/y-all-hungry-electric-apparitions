@@ -17,8 +17,8 @@ document.addEventListener(
 export const Drinks = () => {
     let html = "<h2>Drinks</h2>"
 
-    html += '<select id="drinks">'
-    html += '<option value="0">Select a drink</option>'
+    html += '<select id="drinks" class="form-select mx-auto" style="width: 250px;">'
+    html += '<option value="0">Pick Your Drink</option>'
 
     const arrayOfOptions = drinks.map((drink) => {
 
@@ -82,10 +82,14 @@ document.addEventListener("change", (event) => {
         //if location is selected, display address
         if(matchedDrink !== null){
             document.querySelector('#drink-order').innerHTML = `
-            <img class="drink" style="width: 100px" src="${matchedDrink.img}" alt="drink">
-            <div class="drink-name">${matchedDrink.name} </div>
-            <div class="drink-price"> ${priceString}</div>
-            <div class="drink-desc"> ${matchedDrink.desc}</div>`
+            <div class="card m-4 p-2 justify-content-center align-items-center">
+            <img class="card-img-top hot_dog align-self-center" style="width:100px" src="${matchedDrink.img}" alt="hotdog">
+            <div class="card-body">
+                <div class="food-name card-title">${matchedDrink.name}</div> 
+                <div class="food-price card-text">${priceString}</div> 
+                <div class="food-desc card-text">${matchedDrink.desc}</div> 
+            </div>
+        </div>`
         }
 
         //if null, order-location is blank

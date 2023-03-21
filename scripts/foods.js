@@ -5,7 +5,7 @@ import { getDessertPrice } from "./desserts.js"
 const arrayOfFood = getFood()
 
 export const generateFoodHTML = () => {
-    let html = `<select id="foods">
+    let html = `<select id="foods" class="form-select mx-auto" style="width: 250px;">
     <option value="0">Pick Your Dawg</option>`
 
     const arrayOfOptions = arrayOfFood.map(food => {
@@ -71,10 +71,14 @@ document.addEventListener("change", (event) => {
         //if food is selected, display hot dog name
         if (matchedFood !== null) {
             document.querySelector('#food-order').innerHTML = `
-            <img class="hot_dog" style="width:100px" src="${matchedFood.img}" alt="hotdog">
-            <div class="food-name">${matchedFood.name}</div> 
-            <div class="food-price">${priceString}</div> 
-            <div class="food-desc">${matchedFood.desc}</div> `
+            <div class="card m-4 p-2">
+                <img class="card-img-top hot_dog align-self-center" style="width:100px" src="${matchedFood.img}" alt="hotdog">
+                <div class="card-body">
+                    <div class="food-name card-title">${matchedFood.name}</div> 
+                    <div class="food-price card-text">${priceString}</div> 
+                    <div class="food-desc card-text">${matchedFood.desc}</div> 
+                </div>
+            </div>`
         }
 
         //if null, order-food is blank
