@@ -3,19 +3,19 @@ const database = {
     locations: [
         {
             id: 1,
-            name: 'Truck 1',
+            name: 'The Hungry Winged Horse',
             address: '100 Main Street',
             phone: '555-555-5555'
         },
         {
             id: 2,
-            name: 'Truck 2',
+            name: 'The Hungry Sea Goat',
             address: '123 Corner Street',
             phone: '555-555-5555'
         },
         {
             id: 3,
-            name: 'Truck 3',
+            name: 'The Hungry Water Bearer',
             address: '500 Capitol Street',
             phone: '555-555-5555'
         }
@@ -27,28 +27,70 @@ const database = {
             name: 'Chili Dog',
             price: 5,
             img: './images/HotDawg1.webp',
-            desc: 'Starts with our premimum dogs topped with our signature sauce and beans.'
+            desc: 'Starts with our premimum dogs topped with our signature sauce and beans!'
         },
         {
             id: 2,
             name: 'Slaw Dog',
             price: 6,
             img: './images/HotDawg2.webp',
-            desc: "A dog topped with Grandma's secret slaw recipe"
+            desc: "A dog topped with Grandma's secret slaw recipe!"
         },
         {
             id: 3,
             name: 'Deluxe Dog',
             price: 7,
             img: './images/HotDawg3.jpg',
-            desc: 'A premium dog topped with sauce, onions, and cheese. '
+            desc: 'A premium dog topped with sauce, onions, and cheese!'
+        },
+        {
+            id: 4,
+            name: 'Diablo Dog',
+            price: 9,
+            img: './images/SpicyDog.jpg',
+            desc: 'You want spicy? We have the spicy! Dog covered in a special hot sauce blend, with onions, peppers, and chipotle mayo!'
+        },
+        {
+            id: 5,
+            name: 'Double Downer Dog',
+            price: 10,
+            img: './images/DoubleDog.jpg',
+            desc: 'Extra large bun with 2 dogs and all the works!'
+        },
+        {
+            id: 6,
+            name: "Purrrfect Dog: Dog's Revenge",
+            price: 15,
+            img: './images/CatDog.jpg',
+            desc: 'Made with real cat meat!'
+        },
+        {
+            id: 7,
+            name: 'Flat Dog',
+            price: 4,
+            img: './images/FlatDog.jpg',
+            desc: 'Experimental Dog that in some areas they call a "burger". Flattened down bread with flattened meat put in between with your choice of condiments!'
+        },
+        {
+            id: 8,
+            name: 'Better Dog',
+            price: 20,
+            img: './images/BestDog.jpg',
+            desc: 'Think of the best dog you could ever have. This is better!'
+        },
+        {
+            id: 9,
+            name: 'Plain Jane',
+            price: 9,
+            img: './images/PlainDog.jpg',
+            desc: 'You want a hotdog Mr. or Mrs. boring... Here ya go.'
         },
         {
             id: 99,
             name: 'None',
             price: 0,
             img: './images/None.jpg',
-            desc: 'No selection Made'
+            desc: ''
         }
     ],
 
@@ -58,28 +100,56 @@ const database = {
             name: 'Water',
             price: 1,
             img: './images/Water.jpg',
-            desc: 'Nothing but the best Fuji water for our customers!'
+            desc: 'Nothing but the best, Fiji Water!'
         },
         {
             id: 2,
             name: 'Sweet Tea',
             price: 3,
             img: './images/SweetTea.jpg',
-            desc: 'Bottled Gold Peak Sweet tea'
+            desc: 'Bottled Gold Peak Sweet Tea'
         },
         {
             id: 3,
             name: 'Lemonade',
             price: 7,
             img: './images/Lemonade.jpg',
-            desc: 'Freshly squeezed and served with ice and lemon slices'
+            desc: 'Freshly Squeezed and Served w/ Lemon Slices'
+        },
+        {
+            id: 4,
+            name: 'Slushie',
+            price: 6,
+            img: './images/Slushie.jpg',
+            desc: 'Ice Cold Slushie w/ Strawberry, Cherry, or Blueberry Flavoring!'
+        },
+        {
+            id: 5,
+            name: 'Orange Juice',
+            price: 4,
+            img: './images/Orangejuice.jpg',
+            desc: 'Freshly Squeezed Orange Juice!'
+        },
+        {
+            id: 6,
+            name: 'Rootbeer Float',
+            price: 8,
+            img: './images/RootbeerFloat.jpg',
+            desc: 'Delicious Rootbeer w/ a Scoop of Vanilla Ice Cream!'
+        },
+        {
+            id: 7,
+            name: 'Sprite',
+            price: 8,
+            img: './images/Sprite.jpg',
+            desc: 'Delicious Rootbeer w/ a Scoop of Vanilla Ice Cream!'
         },
         {
             id: 99,
             name: 'None',
             price: 0,
             img: './images/None.jpg',
-            desc: 'No Selection made.'
+            desc: ''
         }
     ],
 
@@ -106,11 +176,39 @@ const database = {
             desc: 'Vanilla ice cream topped with hot fudge, whipped cream and sprinkles'
         },
         {
+            id: 4,
+            name: 'Clown Ice Cream',
+            price: 5,
+            img: './images/ClownIceCream.jpg',
+            desc: 'Vanilla ice cream decorated with different candies to create a fun design!'
+        },
+        {
+            id: 5,
+            name: 'Push-Up',
+            price: 3,
+            img: './images/PushUps.jpg',
+            desc: 'Always Fun w/ an Orange Sherbert Push-Up!'
+        },
+        {
+            id: 6,
+            name: 'Fudge Pop',
+            price: 2,
+            img: './images/FudgePop.jpg',
+            desc: 'Chocolatey Delicious Fudge Pop!'
+        },
+        {
+            id: 7,
+            name: 'Rocket Pop',
+            price: 4,
+            img: './images/RocketPop.jpg',
+            desc: 'Variety of Flavors & Delcious!'
+        },
+        {
             id: 99,
             name: 'None',
             price: 0,
             img: './images/None.jpg',
-            desc: 'No selection made'
+            desc: ''
         }
     ],
 
@@ -130,13 +228,13 @@ const database = {
         { id: 2, locationId: 1, foodId: 2, quantity: 10 },
         { id: 3, locationId: 1, foodId: 3, quantity: 10 },
         { id: 4, locationId: 1, foodId: 99, quantity: 1000 },
-        { id: 5, locationId: 2, foodId: 1, quantity: 10 },
-        { id: 6, locationId: 2, foodId: 2, quantity: 10 },
-        { id: 7, locationId: 2, foodId: 3, quantity: 10 },
+        { id: 5, locationId: 2, foodId: 4, quantity: 10 },
+        { id: 6, locationId: 2, foodId: 5, quantity: 10 },
+        { id: 7, locationId: 2, foodId: 6, quantity: 10 },
         { id: 8, locationId: 2, foodId: 99, quantity: 1000 },
-        { id: 9, locationId: 3, foodId: 1, quantity: 10 },
-        { id: 10, locationId: 3, foodId: 2, quantity: 10 },
-        { id: 11, locationId: 3, foodId: 3, quantity: 10 },
+        { id: 9, locationId: 3, foodId: 7, quantity: 10 },
+        { id: 10, locationId: 3, foodId: 8, quantity: 10 },
+        { id: 11, locationId: 3, foodId: 9, quantity: 10 },
         { id: 12, locationId: 3, foodId: 99, quantity: 1000 }
 
     ],
@@ -147,12 +245,12 @@ const database = {
         { id: 3, locationId: 1, drinkId: 3, quantity: 10 },
         { id: 4, locationId: 1, drinkId: 99, quantity: 1000 },
         { id: 5, locationId: 2, drinkId: 1, quantity: 10 },
-        { id: 6, locationId: 2, drinkId: 2, quantity: 10 },
-        { id: 7, locationId: 2, drinkId: 3, quantity: 10 },
+        { id: 6, locationId: 2, drinkId: 4, quantity: 10 },
+        { id: 7, locationId: 2, drinkId: 5, quantity: 10 },
         { id: 8, locationId: 2, drinkId: 99, quantity: 1000 },
         { id: 9, locationId: 3, drinkId: 1, quantity: 10 },
-        { id: 10, locationId: 3, drinkId: 2, quantity: 10 },
-        { id: 11, locationId: 3, drinkId: 3, quantity: 10 },
+        { id: 10, locationId: 3, drinkId: 6, quantity: 10 },
+        { id: 11, locationId: 3, drinkId: 7, quantity: 10 },
         { id: 12, locationId: 3, drinkId: 99, quantity: 1000 }
     ],
 
@@ -162,12 +260,12 @@ const database = {
         { id: 3, locationId: 1, dessertId: 3, quantity: 10 },
         { id: 4, locationId: 1, dessertId: 99, quantity: 1000 },
         { id: 5, locationId: 2, dessertId: 1, quantity: 10 },
-        { id: 6, locationId: 2, dessertId: 2, quantity: 10 },
-        { id: 7, locationId: 2, dessertId: 3, quantity: 10 },
+        { id: 6, locationId: 2, dessertId: 4, quantity: 10 },
+        { id: 7, locationId: 2, dessertId: 5, quantity: 10 },
         { id: 8, locationId: 2, dessertId: 99, quantity: 1000 },
         { id: 9, locationId: 3, dessertId: 1, quantity: 10 },
-        { id: 10, locationId: 3, dessertId: 2, quantity: 10 },
-        { id: 11, locationId: 3, dessertId: 3, quantity: 10 },
+        { id: 10, locationId: 3, dessertId: 6, quantity: 10 },
+        { id: 11, locationId: 3, dessertId: 7, quantity: 10 },
         { id: 12, locationId: 3, dessertId: 99, quantity: 1000 }
     ],
 
@@ -212,8 +310,6 @@ export const getDessertStock = () => {
     return database.dessertStock.map(obj => ({ ...obj }))
 }
 
-
-
 //export functions to SET the items selected for the current order in orderBuilder
 export const setLocation = (id) => {
     database.orderBuilder.locationId = id
@@ -235,8 +331,6 @@ export const setDessert = (id) => {
     database.orderBuilder.dessertId = id
     console.log(database.orderBuilder)
 }
-
-
 
 //export function that takes current order stored in orderBuilder and creates a copy as a new order in the orders array
 export const completeOrder = () => {
@@ -274,6 +368,7 @@ export const reduceDrinkQuantity = (id) => {
         }
     }
 }
+
 export const reduceDessertQuantity = (id) => {
     for (const dessertStock of database.dessertStock) {
         if (dessertStock.id === id) {
