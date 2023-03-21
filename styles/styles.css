@@ -5,29 +5,45 @@
 
 /* customize scrollbar */
 ::-webkit-scrollbar {width: 13px}
-::-webkit-scrollbar-track {background: darkgreen}
+::-webkit-scrollbar-track {background: black}
 ::-webkit-scrollbar-thumb {background: darkgray}
 
 body, article {
     font-family: 'Inter';
-    background-color: rgb(176, 241, 168);
+    background-color: #2f4f4f;
     text-align: center;
     margin: 8px;
     padding: 8px;
 }
 
 article{
-    border: darkgreen solid 4px;
+    border: #426F6F solid 4px;
     box-shadow: 2px 2px 1px rgb(0 0 0 / 80%);
     border-radius: 25px;
 }
 
-h1{
-    font-weight: 900;
+h2, h6, li, section, #subtotal{
+    color: whitesmoke;
+}
+
+div {
+    display: flex;
+    justify-content: space-around;
+    color: black;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#orderButton {
+    background-color: #FF8E00;
 }
 
 button {
-    filter: drop-shadow(3px 3px 2px black);
+    filter: drop-shadow(3px 3px 2px slategrey);
     margin: 10px;
 }
 
@@ -52,4 +68,16 @@ ul, li {
 
 #orders {
     font-size: 20px;
+}
+
+.me {
+    padding-bottom: 40px;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+.final {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
 }
