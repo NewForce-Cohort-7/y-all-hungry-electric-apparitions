@@ -21,6 +21,7 @@ export const createHTML = () => {
 
         <article id='options__locations'>
             <h2>Locations</h2>
+            <h6>Please select a location first to view the items available<h6>
             ${createLocationList()}
         </article>
         
@@ -41,14 +42,16 @@ export const createHTML = () => {
         <article id="currentOrder">
             <h2> Current Order </h2>
             <section id='order-location'></section>
-            <section id="food-order"></section>
-            <section id="drink-order"></section>
-            <section id="dessert-order"></section>
+            <div id="card-container" class="row justify-content-center align-items-center">
+                <section id="food-order" class="col w-2 h-2 m-4 p-1"></section>
+                <section id="drink-order" class="col w-2 m-4 p-1"></section>
+                <section id="dessert-order" class="col w-2 m-4 p-1"></section>
+            </div>
         </article>
      
         <article>
-            <button id="orderButton">Place Order</button>
             <div id='subtotal'></div>
+            <button id="orderButton" class="btn btn-lg btn-light">Place Order</button>
         </article>
 
         <article id="orders">

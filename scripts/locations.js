@@ -2,8 +2,8 @@ import { getLocations, setLocation, getOrderBuilder } from "./database.js"
 const arrayOfLocations = getLocations()
 
 export const createLocationList = () => {
-    let html = `<select id="dropdown-locations">
-                    <option value="0">Select a Location</option>`
+    let html = `<select id="dropdown-locations" class="form-select mx-auto" style="width: 250px;">
+                    <option value="0">Pick Your Location</option>`
 
     // Use .map() for converting objects to <option> elements
     const listItemsArray = arrayOfLocations.map(location => {
@@ -37,7 +37,7 @@ document.addEventListener("change", (event) => {
 
         //if location is selected, display address
         if (matchedLocation !== null) {
-            document.querySelector('#order-location').innerHTML = `You're picking up your order at ${matchedLocation}`
+            document.querySelector('#order-location').innerHTML = `You're picking up your order at <strong>${matchedLocation}</strong>`
         }
 
         //if null, order-location is blank
