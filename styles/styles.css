@@ -6,8 +6,7 @@
 /* customize scrollbar */
 ::-webkit-scrollbar {width: 13px}
 ::-webkit-scrollbar-track {background: darkgreen}
-::-webkit-scrollbar-thumb {background: rgb(176, 241, 168)}
-
+::-webkit-scrollbar-thumb {background: darkgray}
 
 body, article {
     font-family: 'Inter';

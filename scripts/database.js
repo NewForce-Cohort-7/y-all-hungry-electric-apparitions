@@ -176,6 +176,34 @@ const database = {
             desc: 'Vanilla ice cream topped with hot fudge, whipped cream and sprinkles'
         },
         {
+            id: 4,
+            name: 'Clown Ice Cream',
+            price: 5,
+            img: './images/ClownIceCream.jpg',
+            desc: 'Vanilla ice cream decorated with different candies to create a fun design!'
+        },
+        {
+            id: 5,
+            name: 'Push-Up',
+            price: 3,
+            img: './images/PushUps.jpg',
+            desc: 'Always Fun w/ an Orange Sherbert Push-Up!'
+        },
+        {
+            id: 6,
+            name: 'Fudge Pop',
+            price: 2,
+            img: './images/FudgePop.jpg',
+            desc: 'Chocolatey Delicious Fudge Pop!'
+        },
+        {
+            id: 7,
+            name: 'Rocket Pop',
+            price: 4,
+            img: './images/RocketPop.jpg',
+            desc: 'Variety of Flavors & Delcious!'
+        },
+        {
             id: 99,
             name: 'None',
             price: 0,
@@ -232,12 +260,12 @@ const database = {
         { id: 3, locationId: 1, dessertId: 3, quantity: 10 },
         { id: 4, locationId: 1, dessertId: 99, quantity: 1000 },
         { id: 5, locationId: 2, dessertId: 1, quantity: 10 },
-        { id: 6, locationId: 2, dessertId: 2, quantity: 10 },
-        { id: 7, locationId: 2, dessertId: 3, quantity: 10 },
+        { id: 6, locationId: 2, dessertId: 4, quantity: 10 },
+        { id: 7, locationId: 2, dessertId: 5, quantity: 10 },
         { id: 8, locationId: 2, dessertId: 99, quantity: 1000 },
         { id: 9, locationId: 3, dessertId: 1, quantity: 10 },
-        { id: 10, locationId: 3, dessertId: 2, quantity: 10 },
-        { id: 11, locationId: 3, dessertId: 3, quantity: 10 },
+        { id: 10, locationId: 3, dessertId: 6, quantity: 10 },
+        { id: 11, locationId: 3, dessertId: 7, quantity: 10 },
         { id: 12, locationId: 3, dessertId: 99, quantity: 1000 }
     ],
 
